@@ -1,3 +1,5 @@
+# greedy approach
+
 def canJump(nums):
     max_rea = 0
     for i in range(len(nums)):
@@ -12,3 +14,20 @@ def canJump(nums):
 nums= [3,2,1,0,4]
 print(canJump(nums))
     
+# basic recursion approach
+
+def canjump(nums, i=0):
+    if i >= len(nums) - 1:
+        return True
+    
+    if nums[i] == 0:
+        return False
+    
+    for jump in range(1, nums[i] + 1):
+        if canjump(nums, i + jump):
+            return True
+    
+    return False
+
+nums = [2,3,1,1,4]
+print(canjump(nums, i=0))
