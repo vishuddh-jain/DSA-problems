@@ -1,3 +1,5 @@
+# Brute force approach
+
 def trap(height):
     n =len(height)
 
