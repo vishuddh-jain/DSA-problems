@@ -1,3 +1,5 @@
+# optmized approach used O(n):
+
 def earliestRepeatingChar(s):
     dict = {}
     
@@ -12,3 +14,20 @@ def earliestRepeatingChar(s):
         
 s = "geeksforgeeks"
 print(earliestRepeatingChar(s))
+
+# using brute force :
+
+def EarliestRepeatingChar(s):
+    
+    n = len(s)
+    
+    for i in range(n):
+        for j in range(i):
+            
+            if s[i] == s[j]:
+                return s[i]
+            
+    return "-1"
+
+s = "geeksforgeeks"
+print(EarliestRepeatingChar(s))
