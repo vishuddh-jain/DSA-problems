@@ -1,4 +1,4 @@
-# Using inbuilt function splitting and slicing
+
 
 def Rev_words_in_string(s : str):
     s_list = s.split()
