@@ -23,7 +23,7 @@ def strStr(needle, haystack):
         for i in range(len(haystack)):
             if haystack[i:i+len(needle)] == needle:
                 return i
-    elif needle not in haystack or len(needle) > le(haystack):
+    elif needle not in haystack or len(needle) > len(haystack):
         return -1
     
 print(strStr(needle="but", haystack="sadbutsad"))
