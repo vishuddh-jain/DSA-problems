@@ -13,7 +13,7 @@ Explanation: After removing every 3rd node of the linked list, the resultant lin
 '''
 
 
-class node:
+class Node:
     def __init__(self,x):
         self.data = x
         self.next = None
@@ -38,5 +38,10 @@ def deleteK(head, k):
             i+=1
     return head
 
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+print(deleteK(head, k=2))
 # print(deleteK(head=123456, k=2)) It will throw error if you include this line as the input head can't be an integer,
 # for that you can use input function to take input as linked list
