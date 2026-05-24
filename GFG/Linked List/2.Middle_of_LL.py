@@ -18,15 +18,13 @@ Output: 40
 Explanation: There are 6 nodes in the linked list, so we have two middle nodes: 30 and 40, but we will return the second middle node which is 40.
 '''
 
-class node:
+class Node:
     def __init__(self,data):
         self.data = data
         self.next = None
 
-
-class Solution:
-    def getMiddle(self, head):
-        l = self.length_of_ll(head)
+def getMiddle(head):
+        l = length_of_ll(head)
         middle = l//2
         temp = head
         count = 0
@@ -36,7 +34,7 @@ class Solution:
             count+=1
         return temp.data
     
-    def length_of_ll(self, head):
+def length_of_ll(head):
         temp = head
         i=0
         while temp != None:
@@ -44,5 +42,8 @@ class Solution:
             i+=1
         return i
 
-obj = Solution()
-obj.getMiddle()
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+print(getMiddle(head))
