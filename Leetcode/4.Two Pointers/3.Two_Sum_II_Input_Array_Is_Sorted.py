@@ -24,6 +24,7 @@ Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 '''
 
+# Binary Approach 
 def twoSum(numbers, target):
         result = []
         i = 0
@@ -41,3 +42,16 @@ def twoSum(numbers, target):
         return [-1,-1]
     
 print(twoSum([2,7,11,15], 18))
+
+# Brute force approach
+
+def twoSum(numbers, target):
+        result = []
+        i = 0
+        l = len(numbers)
+        for i in range(l):
+            for j in range(i+1, l):
+                if numbers[i] + numbers[j] == target:
+                    result.append(i+1)
+                    result.append(j+1)
+        return result
