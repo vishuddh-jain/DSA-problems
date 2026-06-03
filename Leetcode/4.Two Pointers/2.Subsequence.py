@@ -33,3 +33,4 @@ def isSubsequence(s: str, t: str) -> bool:
 
     
 print(isSubsequence(s="abc", t="ahbgdc"))
+print(isSubsequence(s="axc", t="ahbgdc"))
