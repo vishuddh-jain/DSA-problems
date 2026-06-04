@@ -31,6 +31,19 @@ def ifCircular(head):
         
     return temp == head
 
+def IfCircular(head):
+    if head is None:
+        return True
+
+    temp = head
+    while True:
+        temp = temp.next
+        if temp == head:
+            return True
+        else:
+            continue
+    return False
+    
 head = Node(1)
 head.next = Node(2)
 head.next.next = Node(3)
@@ -38,3 +51,4 @@ head.next.next.next = Node(4)
 head.next.next.next.next = head
 
 print(ifCircular(head))
+print(IfCircular(head))
