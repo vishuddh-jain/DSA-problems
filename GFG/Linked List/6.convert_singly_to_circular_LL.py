@@ -1,3 +1,14 @@
+'''
+Given a singly linked list, 
+the task is to convert it into a circular linked list.
+Example:
+
+Input: head: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> NULL
+
+Output: head: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 1
+
+'''
+
 class Node:
     def __init__(self, data):
         self.data = data
