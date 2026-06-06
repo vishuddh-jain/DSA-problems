@@ -28,7 +28,16 @@ Output: 1
 #          1 if num is lower than the picked number
 #          otherwise return 0
 # def guess(num: int) -> int:
-def guessNumber(self, n: int) -> int:
+pick = 6
+def guess(num):
+    if num >= pick:
+        return -1
+    if num < pick:
+        return 1
+    if num == pick:
+        return 0
+    
+def guessNumber(n):
         low = 1
         high = n
         while low < high:
