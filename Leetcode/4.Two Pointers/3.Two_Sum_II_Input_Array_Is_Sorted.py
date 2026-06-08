@@ -45,9 +45,8 @@ print(twoSum([2,7,11,15], 18))
 
 # Brute force approach
 
-def twoSum(numbers, target):
+def twosum(numbers, target):
         result = []
-        i = 0
         l = len(numbers)
         for i in range(l):
             for j in range(i+1, l):
@@ -55,3 +54,4 @@ def twoSum(numbers, target):
                     result.append(i+1)
                     result.append(j+1)
         return result
+print(twosum([2,7,11,15], 18))
