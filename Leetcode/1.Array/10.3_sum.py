@@ -23,6 +23,32 @@ Input: nums = [0,0,0]
 Output: [[0,0,0]]
 Explanation: The only possible triplet sums up to 0.
 '''
+# Better approach still O(n^2)
+def threeSum(nums):
+        sorted_nums = sorted(nums)
+        result = []
+        for i in range(len(sorted_nums) - 2):
+            
+            j = i + 1
+            k = len(sorted_nums) - 1
+            while j < k:
+                total = sorted_nums[j] + sorted_nums[k]
+                
+                if total == -sorted_nums[i]:
+                    triplet = [sorted_nums[i],sorted_nums[j],sorted_nums[k]]
+                    if triplet not in result:
+                        result.append(triplet)
+                    j += 1
+                    k -= 1
+                elif total < -sorted_nums[i]:
+                    j += 1
+                else:
+                    k -= 1
+        return result
+print(threeSum(nums=[-1,0,1,2,-1,-4]))
+
+
+# BRUTE FORCE
 def ThreeSum(nums):
         result = [] 
 
