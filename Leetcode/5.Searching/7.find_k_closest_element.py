@@ -14,18 +14,20 @@ Example 2:
 Input: arr = [1,1,2,3,4,5], k = 4, x = -1
 Output: [1,1,2,3]
 '''
-class Solution:
-    def findClosestElements(self, arr, k, x):
 
-        left = 0
-        right = len(arr) - k
+def findClosestElements(arr, k, x):
+        low = 0
+        high = len(arr) - 1
+    
+        while (high - low +1) > k:
 
-        while left < right:
-            mid = left + (right - left) // 2
-
-            if x - arr[mid] > arr[mid + k] - x:
-                left = mid + 1
+            if abs(arr[low] - x) > abs(arr[high] - x):  # "abs" is like a modulo function 
+                low += 1
             else:
-                right = mid
+                high -= 1
 
-        return arr[left:left + k]
+        return arr[low:high + 1]
+arr = [1,1,2,3,4,5]
+k = 4
+x = -1
+print(findClosestElements(arr,k,x))
