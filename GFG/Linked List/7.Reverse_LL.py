@@ -13,22 +13,19 @@ class Node:
         self.data = data
         self.next = None
         
-def reverse_ll_iteratively(head):
+def reverse_ll(head):
     if head is None or head.next is None:
         return head
     
-    prev = None
-    current = head
-    while current is not None:
-        next_node = current.next
-        current.next = prev
-        prev = current
-        current = next_node
-    return prev
+    reverse_head = reverse_ll(head.next)
+    
+    head.next.next = head
+    head.next = None
 
+    return reverse_head
 head = Node(1)
 head.next = Node(2)
 head.next.next = Node(3)
 head.next.next.next = Node(4)
 head.next.next.next.next = Node(5)
-print(reverse_ll_iteratively)
+print(reverse_ll(head))
