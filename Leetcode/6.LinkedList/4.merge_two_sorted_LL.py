@@ -22,33 +22,48 @@ class Node:
         self.next = None
         
 
-def mergeTwoLists(list1, list2):
-
-        dummy = Node(-1)
-        tail = dummy
-
-        while list1 and list2:
-
-            if list1.val <= list2.val:
-                tail.next = list1
-                list1 = list1.next
-            else:
-                tail.next = list2
-                list2 = list2.next
-
-            tail = tail.next
-
-        # Attach remaining nodes
-        if list1:
-            tail.next = list1
-        else:
-            tail.next = list2
-
-        return dummy.next
+def mergeTwoLists(head1, head2):
+    if head1 is None:
+        return head2
+    if head2 is None:
+        return head1
     
-head = Node(1)
-head.next = Node(2)
-head.next.next = Node(3)
-head.next.next.next = Node(4)
-head.next.next.next.next = Node(5)
-print(mergeTwoLists(list1=,list2=))
+    finalhead = None
+    finaltail = None
+    
+    while head1 is not None and head2 is not None:
+        if head1.data <= head2.data:
+            if finalhead is None:
+                finalhead = head1
+                finaltail = head1
+            else:
+                finaltail.next = head1
+                finaltail = head1
+            head1 = head1.next
+                
+        elif head1.data >= head2.data:
+            if finalhead is None:
+                finalhead = head2
+                finaltail = head2
+            else:
+                finaltail.next = head2
+                finaltail = head2
+            head2 = head2.next
+        
+    if head1 is not None:
+        finaltail.next = head1
+        
+    if head2 is not None:
+        finaltail.next = head2
+    
+    return finalhead
+        
+head1 = Node(1)
+head1.next = Node(5)
+head1.next.next = Node(7)
+head2 = Node(4)
+head2.next = Node(6)
+head2.next.next = Node(8)
+head2.next.next.next = Node(10)
+
+print(mergeTwoLists(head1,head2))
