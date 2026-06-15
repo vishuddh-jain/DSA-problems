@@ -14,8 +14,8 @@ Example 3:
 Input: s = "aabb"
 Output: -1
 '''
-
-from collections import deque
+# Using dictionary approach
+from collections import Counter, deque
 def firstUniqChar(s):
 
         q = deque()
@@ -35,3 +35,16 @@ def firstUniqChar(s):
         return q[0][1] if q else -1
     
 print(firstUniqChar(s="loveleetcode"))
+
+# Using "Counter" module 
+
+def firstUniqChar(s):
+        q = deque()
+        freq = Counter(s)
+        for i,ch in enumerate(s):
+            
+            q.append((ch, i))
+            while q and freq[q[0][0]] > 1:
+                q.popleft()
+            
+        return q[0][1] if q else -1
