@@ -1,5 +1,6 @@
-class Solution:
-    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+from collections import deque
+
+def maxSlidingWindow(nums, k):
         q = deque()
         result = []
 
@@ -16,5 +17,5 @@ class Solution:
             if i >= k-1:
                 result.append(nums[q[0]])
         return result
-
+print(maxSlidingWindow(nums=[1,3,-1,-3,5,3,6,7], k = 3))
 
