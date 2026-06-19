@@ -15,7 +15,7 @@ Output: [1]
 '''
 
 # Definition for singly-linked list.
-class ListNode:
+class Node:
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
@@ -32,7 +32,7 @@ def length(head):
 def removeNthFromEnd(head, n):
         l = length(head)
 
-        dummy = ListNode(0)
+        dummy = Node(0)
         dummy.next = head
 
         temp = dummy
@@ -41,3 +41,9 @@ def removeNthFromEnd(head, n):
         temp.next = temp.next.next
         return dummy.next
 
+head = Node(1)
+head.next = Node(2)
+head.next.next = Node(3)
+head.next.next.next = Node(4)
+head.next.next.next.next = Node(5)
+print(removeNthFromEnd(head, 2))
