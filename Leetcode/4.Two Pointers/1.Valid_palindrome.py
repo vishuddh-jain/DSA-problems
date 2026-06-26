@@ -31,6 +31,12 @@ def isPalindrome(s):
     
 print(isPalindrome(s="racecar"))
 
+def palindrome(s):
+    if s == s[::-1]:
+     return True
+    else:
+     return False
+     
 # 19ms Time complexity
 
             
