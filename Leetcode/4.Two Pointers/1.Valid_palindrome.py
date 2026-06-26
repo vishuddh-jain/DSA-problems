@@ -18,7 +18,7 @@ Explanation: "raceacar" is not a palindrome.
 '''
 
 
-def isPalindrome(s: str) -> bool:
+def isPalindrome(s):
         alphabets = list("abcdefghijklmnopqrstuvwxyz0123456789")
         s = s.lower()
         string = ""
@@ -32,4 +32,5 @@ def isPalindrome(s: str) -> bool:
 print(isPalindrome(s="racecar"))
 
 # 19ms Time complexity
+
             
