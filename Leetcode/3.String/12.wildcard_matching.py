@@ -19,6 +19,8 @@ Input: s = "cb", p = "?a"
 Output: false
 Explanation: '?' matches 'c', but the second letter is 'a', which does not match 'b'.
 """
+
+# Solved using recursion
 def isMatch(s, p):
     def solve(i, j):
 
@@ -55,3 +57,4 @@ def isMatch(s, p):
     return solve(0, 0)
 
 print(isMatch(s="abcd", p="*c*"))
+
