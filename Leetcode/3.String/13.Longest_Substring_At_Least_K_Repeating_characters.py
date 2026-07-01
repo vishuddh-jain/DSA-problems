@@ -36,6 +36,3 @@ def longestSubstring(s, k):
     return len(s)
 
 print(longestSubstring(s="ababacb", k = 3))
-
-s= 'aabcaaccbbd'
-print(set(s))
