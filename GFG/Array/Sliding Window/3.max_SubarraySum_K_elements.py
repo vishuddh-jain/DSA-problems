@@ -15,6 +15,22 @@ Input: arr[] = [100, 200, 300, 400], k = 1
 Output: 400
 Explanation: arr3 = 400, which is maximum.
 '''
+# Time limt exceeding approach:
+
+def maxSubarraySum(arr, k):
+    max_sum = 0
+    l = 0
+     
+    for r in range(k, len(arr)+1):
+        win_sum = sum(arr[l:r])
+        max_sum = max(win_sum, max_sum)
+        l+=1
+        
+    return max_sum
+
+print(maxSubarraySum(arr=[100,200,300,400], k = 2))
+
+# Best sliding window approach:
 
 def maxSubarraySum(arr, k):
     win_sum = sum(arr[:k])
