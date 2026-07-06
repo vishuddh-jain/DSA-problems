@@ -24,8 +24,7 @@ def maxOfSubarray(arr, k):
     l = 0
     result = []
     for r in range(k, len(arr)+1): 
-        win = arr[l:r]
-        win_max = max(win)
+        win_max = max(arr[l:r])
         result.append(win_max)
         l += 1
     return result
