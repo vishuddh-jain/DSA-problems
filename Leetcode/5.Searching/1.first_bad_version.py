@@ -25,10 +25,10 @@ Output: 1
 # The isBadVersion API is already defined for you.
 first_bad = 4 # Already given in Input
 
-def isBadVersion(version: int) -> bool:
+def isBadVersion(version):
     return version >= first_bad
 
-def firstBadVersion(self, n: int) -> int:
+def firstBadVersion(n):
         low = 1
         high = n
         
@@ -41,3 +41,5 @@ def firstBadVersion(self, n: int) -> int:
             else:
                 high = mid 
         return low
+
+print(firstBadVersion(n=5))
