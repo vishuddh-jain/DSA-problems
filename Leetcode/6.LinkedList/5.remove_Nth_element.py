@@ -32,14 +32,17 @@ def length(head):
 def removeNthFromEnd(head, n):
         l = length(head)
 
-        dummy = Node(0)
-        dummy.next = head
+        # dummy = Node(0)
+        # dummy.next = head
 
-        temp = dummy
-        for _ in range(l-n):
+        # temp = dummy
+        temp = head
+        # for _ in range(l-n):
+        for _ in range(l-n-1):
             temp = temp.next
         temp.next = temp.next.next
-        return dummy.next
+        # return dummy.next
+        return head
 
 head = Node(1)
 head.next = Node(2)
