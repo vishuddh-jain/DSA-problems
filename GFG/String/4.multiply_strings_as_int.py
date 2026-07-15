@@ -18,7 +18,7 @@ Explanation: Anything multiplied by 0 is equal to 0.
 '''
 
 
-
+# Solved using inbuilt methods
 def MultiplyStrings(s1, s2):
     s1 = int(s1)
     s2 = int(s2)
@@ -26,3 +26,18 @@ def MultiplyStrings(s1, s2):
     return result
 
 print(MultiplyStrings(s1="0033", s2="3"))
+
+# Using proper iterative approach
+def multiply_strings(s1, s2):
+    s1_int = str_to_int(s1)
+    s2_int = str_to_int(s2)
+    ans = s1_int *s2_int
+    return ans
+def str_to_int(str_n):
+    result = 0
+    for ch in str_n:
+        digit = ord(ch) - ord('0')
+        result = result * 10 + digit
+    return result 
+        
+print(multiply_strings(s1="0033", s2="3"))

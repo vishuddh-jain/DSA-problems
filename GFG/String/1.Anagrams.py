@@ -40,7 +40,7 @@ def isAnagram(s, t):
 
         if ch in t_list:
             t_list.remove(ch)
-
+            
         else:
             return False
 
