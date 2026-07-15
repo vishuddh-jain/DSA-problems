@@ -17,6 +17,7 @@ Input: nums = [3,3], target = 6
 Output: [0,1]
 '''
 
+# For Unsorted Array
 def twoSum(nums, target):
         dict = {}
         for i in range(len(nums)):
@@ -26,3 +27,17 @@ def twoSum(nums, target):
             else:
                 dict[nums[i]] = i
 print(twoSum(nums=[2,7,11,15], target=9))
+
+# For Sorted Array
+
+def Twosum(nums, target):
+    i = 0
+    j = len(nums)-1
+    while i < j:
+        if nums[i] + nums[j] == target:
+            return [i, j]
+        elif nums[i] + nums[j] > target:
+            j-=1
+        elif nums[i] + nums[j] < target:
+            i+=1
+print(Twosum(nums=[2,11,7,15], target = 9))
